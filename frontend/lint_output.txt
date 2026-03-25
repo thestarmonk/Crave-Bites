@@ -1,0 +1,145 @@
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\App.jsx
+  4:27  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\components\Footer.jsx
+  7:13  error  'user' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\components\Navbar.jsx
+  2:16  error  'useNavigate' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  6:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u       no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\components\ProductCard.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\context\AuthContext.jsx
+   5:14  error  Fast refresh only works when a file only exports components. Move your React context(s) to a separate file                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-refresh/only-export-components
+  15:13  error  Error: Cannot access variable before it is declared
+
+`fetchProfile` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  13 |         if (userInfo) {
+  14 |             setUser(JSON.parse(userInfo));
+> 15 |             fetchProfile(); // Get latest role/data from server
+     |             ^^^^^^^^^^^^ `fetchProfile` accessed before it is declared
+  16 |         }
+  17 |         setLoading(false);
+  18 |     }, []);
+
+  44 |     };
+  45 |
+> 46 |     const fetchProfile = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 47 |         try {
+     | ^^^^^^^^^^^^^
+> 48 |             const { data } = await api.get('/auth/profile');
+     ΓÇª
+     | ^^^^^^^^^^^^^
+> 55 |         }
+     | ^^^^^^^^^^^^^
+> 56 |     };
+     | ^^^^^^^ `fetchProfile` is declared here
+  57 |
+  58 |     const logout = () => {
+  59 |         setUser(null);  react-hooks/immutability
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\context\CartContext.jsx
+   3:14  error  Fast refresh only works when a file only exports components. Move your React context(s) to a separate file                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-refresh/only-export-components
+  11:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+   9 |         const savedCart = localStorage.getItem('cartItems');
+  10 |         if (savedCart) {
+> 11 |             setCartItems(JSON.parse(savedCart));
+     |             ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  12 |         }
+  13 |     }, []);
+  14 |  react-hooks/set-state-in-effect
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\AdminDashboard.jsx
+    12:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        no-unused-vars
+   105:18  error  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+   191:40  error  'status' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   no-unused-vars
+   252:18  error  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+   269:18  error  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+   647:18  error  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+   669:18  error  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+   680:18  error  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+   789:18  error  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+   813:18  error  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+  1064:22  error  'err' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      no-unused-vars
+  1277:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  1275 |
+  1276 |     useEffect(() => {
+> 1277 |         fetchAllOrders();
+       |         ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  1278 |         const interval = setInterval(fetchAllOrders, 15000); // Check every 15s
+  1279 |         return () => clearInterval(interval);
+  1280 |     }, [fetchAllOrders]);  react-hooks/set-state-in-effect
+  1507:38  error  'Icon' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\AdminLogin.jsx
+   5:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  27:18  error  'error' is defined but never used                                              no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\Cart.jsx
+  5:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\Checkout.jsx
+    8:10  error    'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                    no-unused-vars
+   34:8   warning  React Hook useEffect has a missing dependency: 'fetchProfile'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  124:34  error    'err' is defined but never used                                                                                  no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\Contact.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\Home.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\Login.jsx
+   5:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  18:18  error  'error' is defined but never used                                              no-unused-vars
+  18:25  error  Empty block statement                                                          no-empty
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\Menu.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  85:43  error  'idx' is defined but never used                                                no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\OrderDetails.jsx
+  6:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\PrivacyPolicy.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\Profile.jsx
+   7:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  49:18  error  'error' is defined but never used                                              no-unused-vars
+  62:18  error  'error' is defined but never used                                              no-unused-vars
+  72:18  error  'error' is defined but never used                                              no-unused-vars
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\Register.jsx
+   5:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  22:18  error  'error' is defined but never used                                              no-unused-vars
+  22:25  error  Empty block statement                                                          no-empty
+
+C:\Users\Tejas\Desktop\New folder (8)\frontend\src\pages\TermsOfService.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+Γ£û 45 problems (44 errors, 1 warning)
+
