@@ -82,12 +82,12 @@ const seedData = async () => {
         await User.deleteMany();
         await User.create({
             name: "Admin User",
-            email: "admin@cravebites.com",
+            email: "admin@gmail.com",
             phone: "9876543210",
-            password: "adminpassword",
+            password: "12345678",
             role: "admin"
         });
-        console.log("Admin User Created: admin@cravebites.com / adminpassword");
+        console.log("Admin User Created: admin@gmail.com / 12345678");
 
         await Product.deleteMany();
         console.log("Cleared old products...");

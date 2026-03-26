@@ -59,7 +59,7 @@ const AdminLogin = () => {
                                 type="email"
                                 required
                                 className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 pl-14 pr-6 focus:outline-none focus:border-primary transition-all duration-300 font-medium"
-                                placeholder="admin@cravebites.com"
+                                placeholder="admin@gmail.com"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
