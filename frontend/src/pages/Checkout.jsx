@@ -183,7 +183,8 @@ const Checkout = () => {
                 const { data: razorpayOrder } = await api.post('/payment/create-order', { amount: total });
 
                 const options = {
-                    key: import.meta.env.VITE_RAZORPAY_KEY_ID || 'your_razorpay_key_id',
+                    key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+
                     amount: razorpayOrder.amount,
                     currency: razorpayOrder.currency,
                     name: "CraveBites",

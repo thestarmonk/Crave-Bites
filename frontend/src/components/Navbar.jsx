@@ -50,7 +50,16 @@ const Navbar = () => {
                                 {link.name}
                             </Link>
                         ))}
+                        {user && user.role === 'admin' && (
+                            <Link
+                                to="/admin"
+                                className={`px-5 py-2 rounded-xl text-sm font-bold transition-300 ${location.pathname.startsWith('/admin') ? 'text-white bg-primary/20 border border-primary/30' : 'text-primary hover:bg-primary/10'}`}
+                            >
+                                Dashboard
+                            </Link>
+                        )}
                     </div>
+
 
                     <div className="flex items-center gap-3">
                         <Link to="/cart" className="relative p-2.5 bg-[#0D0D12] hover:bg-[#1A1A24] rounded-xl transition-300 text-gray-300 hover:text-white">
@@ -119,7 +128,17 @@ const Navbar = () => {
                                     {link.name}
                                 </Link>
                             ))}
+                            {user && user.role === 'admin' && (
+                                <Link
+                                    to="/admin"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="block px-6 py-4 rounded-2xl text-lg font-bold text-primary hover:bg-primary/10"
+                                >
+                                    Admin Dashboard
+                                </Link>
+                            )}
                         </div>
+
                     </motion.div>
                 )}
             </AnimatePresence>

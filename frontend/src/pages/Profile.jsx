@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import api from '../services/api';
 import { AuthContext } from '../context/AuthContext';
 import Loader from '../components/Loader';
-import { Package, Clock, MapPin, Edit3, Save, X, Plus, Trash2, Phone, Mail, User as UserIcon, Home as HomeIcon, Pencil, Navigation } from 'lucide-react';
+import { Package, Clock, MapPin, Edit3, Save, X, Plus, Trash2, Phone, Mail, User as UserIcon, Home as HomeIcon, Pencil, Navigation, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import toast from 'react-hot-toast';
 

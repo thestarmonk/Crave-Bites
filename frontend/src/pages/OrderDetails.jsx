@@ -4,6 +4,7 @@ import api from '../services/api';
 import Loader from '../components/Loader';
 import { Package, MapPin, CreditCard, Clock, ChevronLeft, CheckCircle2, Truck, Utensils, Timer, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import toast from 'react-hot-toast';
 
 const OrderDetails = () => {
     const { id } = useParams();

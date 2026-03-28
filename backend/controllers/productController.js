@@ -1,13 +1,28 @@
 const Product = require('../models/Product');
 
+const fs = require('fs');
+const path = require('path');
+
 exports.getProducts = async (req, res) => {
     try {
-        const products = await Product.find({});
+        let products = await Product.find({});
+        if (products.length === 0) {
+            // Fallback to local data if DB is empty for development
+            const localData = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8'));
+            return res.json(localData);
+        }
         res.json(products);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        // Even if DB fails, try to return local data for demo/dev
+        try {
+            const localData = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8'));
+            return res.json(localData);
+        } catch (e) {
+            res.status(500).json({ message: error.message });
+        }
     }
 };
+
 
 exports.getProductById = async (req, res) => {
     try {

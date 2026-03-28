@@ -11,7 +11,8 @@ const Menu = () => {
     const [filter, setFilter] = useState('All');
     const [searchTerm, setSearchTerm] = useState('');
 
-    const categories = ['All', 'Pizza', 'Burgers', 'Pasta', 'Sushi', 'Drinks', 'Desserts'];
+    const categories = ['All', 'Pizza', 'Burgers', 'Pasta', 'Sushi', 'Asian', 'Sides', 'Drinks', 'Desserts'];
+
 
     useEffect(() => {
         const fetchProducts = async () => {

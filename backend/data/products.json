@@ -1,0 +1,7 @@
+[
+    { "name": "Margherita Pizza", "description": "Classic tomato sauce, mozzarella, and fresh basil on a thin crust.", "price": 299, "category": "Pizza", "image": "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=800", "isAvailable": true, "isVeg": true },
+    { "name": "Classic Veg Burger", "description": "Crispy veg patty with lettuce, onion, and mayonnaise.", "price": 129, "category": "Burgers", "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800", "isAvailable": true, "isVeg": true },
+    { "name": "White Sauce Pasta", "description": "Penne tossed in creamy alfredo sauce with garlic and herbs.", "price": 249, "category": "Pasta", "image": "https://images.unsplash.com/photo-1645112481338-3560e99b3224?w=800", "isAvailable": true, "isVeg": true },
+    { "name": "California Roll", "description": "Crab sticks, avocado, and cucumber rolled in seaweed.", "price": 399, "category": "Sushi", "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=800", "isAvailable": true, "isVeg": false },
+    { "name": "Choco Lava Cake", "description": "Warm molten chocolate cake with a gooey center.", "price": 109, "category": "Desserts", "image": "https://images.unsplash.com/photo-1563805042-df68a16617c7?w=800", "isAvailable": true, "isVeg": true }
+]
